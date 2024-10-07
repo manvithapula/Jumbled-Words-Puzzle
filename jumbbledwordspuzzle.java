@@ -1,48 +1,36 @@
-//task4
 import java.util.Scanner;
-
-public class JumbledWordsPuzzle {
-
-    // Function to play the game
-    public static void playGame() {
+public class Main{
+    public static void jumbledPuzzle() {
         Scanner scanner = new Scanner(System.in);
-        int score = 0; // Initialize score
-        
-        // Level 1: Three-letter words
+        int score = 0;
         System.out.println("Welcome to Level 1!");
-        if (!askQuestion(scanner, "NEP", "PEN")) return; // First word
+        if (!word(scanner, "NEP", "PEN")) return;
         score++;
-        if (!askQuestion(scanner, "CAR", "CAR")) return; // Second word
+        if (!word(scanner, "CAR", "CAR")) return;
         score++;
-        if (!askQuestion(scanner, "BAT", "BAT")) return; // Third word
+        if (!word(scanner, "BAT", "BAT")) return;
         score++;
         System.out.println("Congratulations! You completed Level 1 with a score of " + score);
-        
-        // Level 2: Four-letter words
         System.out.println("\nWelcome to Level 2!");
-        if (!askQuestion(scanner, "POAS", "SOAP")) return;
+        if (!word(scanner, "POAS", "SOAP")) return;
         score++;
-        if (!askQuestion(scanner, "RETS", "REST")) return;
+        if (!word(scanner, "RETS", "REST")) return;
         score++;
-        if (!askQuestion(scanner, "LIST", "LIST")) return;
+        if (!word(scanner, "LIST", "LIST")) return;
         score++;
         System.out.println("Well done! You completed Level 2 with a score of " + score);
-        
-        // Level 3: Five-letter words
         System.out.println("\nWelcome to Level 3!");
-        if (!askQuestion(scanner, "CDOUL", "COULD")) return;
+        if (!word(scanner, "CDOUL", "COULD")) return;
         score++;
-        if (!askQuestion(scanner, "SLEET", "SLEET")) return;
+        if (!word(scanner, "SLEET", "SLEET")) return;
         score++;
-        if (!askQuestion(scanner, "NAMES", "NAMES")) return;
+        if (!word(scanner, "NAMES", "NAMES")) return;
         score++;
         System.out.println("Congratulations! You completed all levels with a perfect score of " + score);
     }
-    
-    // Function to ask a question and check the answer
-    public static boolean askQuestion(Scanner scanner, String jumbledWord, String correctAnswer) {
+    public static boolean word(Scanner scanner, String jumbledWord, String correctAnswer) {
         System.out.println("Unscramble the letters: " + jumbledWord);
-        String userAnswer = scanner.nextLine().toUpperCase(); // Get user input and convert to uppercase for consistency
+        String userAnswer = scanner.nextLine().toUpperCase();
         if (userAnswer.equals(correctAnswer)) {
             System.out.println("Correct!");
             return true;
@@ -51,11 +39,7 @@ public class JumbledWordsPuzzle {
             return false;
         }
     }
-    
-    // Main function
     public static void main(String[] args) {
-        playGame(); // Start the game
+        jumbledPuzzle();
     }
 }
-  
-  
